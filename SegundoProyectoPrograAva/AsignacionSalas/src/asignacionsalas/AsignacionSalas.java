@@ -5,6 +5,8 @@
  */
 package asignacionsalas;
 
+import java.text.ParseException;
+
 /**
  *
  * @author Hugo
@@ -14,9 +16,10 @@ public class AsignacionSalas {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Universidad universidad = new Universidad();
         universidad.setNombre("Universidad de Talca");
+        universidad.setCantEdificios(0);
         universidad.crearEdificio("Verde");
         universidad.crearEdificio("Amarillo");
         universidad.crearEdificio("Cafe");
@@ -65,7 +68,7 @@ public class AsignacionSalas {
         universidad.registrarResponsable("Ruth Garrido", 2);
 
         Responsables yo = universidad.getResponsable(1, "Hugo Castro");
-        yo.realizarReserva(yo);
+        yo.realizarReserva(yo, universidad);
         //responsables.verResponsable();
         //universidad.Serializar();
 

@@ -12,12 +12,13 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
     @Override
     public void reservarPropuesta(Responsables reservador) throws ParseException {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Ingrese su fecha propuesta para esta Sala de clases FORMATO: dd/mm/aaaa");
-        System.out.println("Ejemplo -> 05/06/2000 Si no se sigue el formato, se lanzará una Exception");
+        System.out.println("Ingrese su fecha propuesta para esta Sala de clases FORMATO: dd-mm-aaaa");
+        System.out.println("Ejemplo -> 05-06-2000 Si no se sigue el formato, se lanzará una Exception");
         String fecha = entrada.nextLine();
         SimpleDateFormat fechaForm = new SimpleDateFormat("dd-MM-yyyy");
         Date fechafinal = fechaForm.parse(fecha);
-        System.out.println(fecha);
+        System.out.println("Reserva Lista!");
+        set
     }
 
     @Override

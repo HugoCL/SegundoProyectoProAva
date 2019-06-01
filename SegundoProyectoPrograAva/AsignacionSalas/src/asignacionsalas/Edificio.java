@@ -6,6 +6,10 @@ public class Edificio {
 
     private String color;
 
+    private int cantSalas = 0;
+
+    private int cantLabs = 0;
+
     private ArrayList<Laboratorio> laboratorios = new ArrayList<Laboratorio>();
 
     private ArrayList<SaladeClase> salas = new ArrayList<SaladeClase>();
@@ -28,6 +32,7 @@ public class Edificio {
         nuevaSala.crearSala(nombre, actividad, capacidad, computadores, datas, mesas, pizarras, nombreProfesor, telones,
                 sillas);
         salas.add(nuevaSala);
+        setCantSalas(getCantSalas()+1);
     }
     /*
     public void verDatos(){
@@ -37,5 +42,42 @@ public class Edificio {
 
     public void agregarLaboratorio(){
 
+    }
+
+    public ArrayList<SaladeClase> getSalas(){
+        return salas;
+    }
+
+    public void printSalas(){
+        for (Sala sala: salas) {
+            System.out.print(sala.getNombreSala()+" ");
+        }
+    }
+
+    public void printLabs(){
+        if (laboratorios.size() == 0){
+            System.out.println("No hay labs disponibles en este edificio");
+        }
+        else{
+            for (Sala lab: laboratorios) {
+                System.out.print(lab.getNombreSala()+" ");
+            }
+        }
+    }
+
+    public int getCantSalas() {
+        return cantSalas;
+    }
+
+    public void setCantSalas(int cantSalas) {
+        this.cantSalas = cantSalas;
+    }
+
+    public int getCantLabs() {
+        return cantLabs;
+    }
+
+    public void setCantLabs(int cantLabs) {
+        this.cantLabs = cantLabs;
     }
 }

@@ -10,7 +10,7 @@ public class Universidad implements Serializable {
 
     private String nombre;
 
-    private ArrayList<Edificio> edificios = new ArrayList<Edificio>();
+    protected ArrayList<Edificio> edificios = new ArrayList<Edificio>();
 
     private ArrayList<DTI> empleadosDTI = new ArrayList<DTI>();
 
@@ -20,7 +20,7 @@ public class Universidad implements Serializable {
 
     private ArrayList<Profesor> profesores = new ArrayList<Profesor>();
 
-    private int cantEdificios = 0;
+    private int cantEdificios;
 
     public void eliminarSala() {
     }
@@ -46,14 +46,13 @@ public class Universidad implements Serializable {
     }
 
     public void crearEdificio(String color){
-        if (cantEdificios == 0){
+        if (getCantEdificios() == 0){
             edificios.add(new Edificio(color));
-            cantEdificios++;
+            setCantEdificios(getCantEdificios()+1);
         }
         else{
             int yaExiste = 0;
-            for (int i = 0; i < edificios.size(); i++) {
-                Edificio edificioActual = edificios.get(i);
+            for (Edificio edificioActual : edificios) {
                 if (edificioActual.getColor().equals(color)) {
                     System.out.println("Este color ya existe para un edificio, ingrese otro color");
                     yaExiste = 1;
@@ -62,7 +61,7 @@ public class Universidad implements Serializable {
             }
             if (yaExiste == 0){
                 edificios.add(new Edificio(color));
-                cantEdificios++;
+                setCantEdificios(getCantEdificios()+1);
             }
         }
     }
@@ -141,14 +140,19 @@ public class Universidad implements Serializable {
     }
 
     public void getAllEdificios(){
-        System.out.println(cantEdificios);
+        System.out.println(getCantEdificios());
         for (Edificio edificio : edificios) {
-            System.out.println(edificio.getColor());
+            System.out.print(edificio.getColor()+" ");
         }
+        System.out.println();
     }
 
     public String getNombre() {
         return nombre;
+    }
+
+    public ArrayList<Edificio> getEdificios(){
+        return edificios;
     }
 
     public void setNombre(String nombre) {
