@@ -35,10 +35,11 @@ public class AsignacionSalas {
         universidad.setNombre("Universidad de Talca");
         System.out.println("Bienvenid@ a la "+universidad.getNombre());
         universidad.setCantEdificios(0);
+        universidad.crearEdificio("Naranjo");
         universidad.crearEdificio("Verde");
         universidad.crearEdificio("Amarillo");
         universidad.crearEdificio("Cafe");
-        universidad.crearEdificio("Naranjo");
+
 
         universidad.crearSala("Naranjo", 0, "Sala 11", "Sala Comun", 50,
                 0, 1, 50, 1, "Julio Profe", 1, 50);

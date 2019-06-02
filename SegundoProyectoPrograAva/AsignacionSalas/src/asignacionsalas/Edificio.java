@@ -54,7 +54,7 @@ public class Edificio {
     }
 
     public void printSalas(){
-        for (Sala sala: salas) {
+        for (SaladeClase sala: salas) {
             System.out.print(sala.getNombreSala()+" ");
         }
     }

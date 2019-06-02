@@ -24,8 +24,8 @@ public class Propuesta {
 
     public void getFechas(){
         for (int j = 0; j < fechasPropuestasInicio.size(); j++) {
-            System.out.println("Fecha propuesta (Inicio): "+fechasPropuestasInicio.get(j));
-            System.out.println("Fecha propuesta (Final): "+fechasPropuestasFinal.get(j));
+            System.out.println("Fecha propuesta n°"+(j+1)+" (Inicio): "+fechasPropuestasInicio.get(j));
+            System.out.println("Fecha propuesta n°"+(j+1)+" (Final): "+fechasPropuestasFinal.get(j));
         }
     }
 

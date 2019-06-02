@@ -55,11 +55,11 @@ public abstract class Responsables implements Serializable {
     }
     //ELIMINAR ESTE METODO ¡SOLO PRUEBAS!
     public void getReservas(Universidad universidad){
-        ArrayList<Edificio> edificio = universidad.getEdificios();
-        Edificio edificoqi = edificio.get(0);
-        ArrayList<SaladeClase> sala = edificoqi.getSalas();
-        edificoqi.printSalas();
-        //saladv.printPropuestas();
+        ArrayList<Edificio> edificios = universidad.getEdificios();
+        Edificio edificio = edificios.get(0);
+        ArrayList<SaladeClase> salas = edificio.getSalas();
+        SaladeClase sala = salas.get(0);
+        sala.printPropuestas();
     }
     public void reportarIncidencia() {
     }

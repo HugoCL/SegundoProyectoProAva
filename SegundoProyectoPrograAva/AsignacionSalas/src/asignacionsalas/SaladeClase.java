@@ -34,7 +34,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                             "de la tarde" + "Si no se sigue el formato, se lanzará una " + "Exception y " + "el programa fallara");
                     entrada.nextLine();
                     String fecha = entrada.nextLine();
-                    SimpleDateFormat fechaForm = new SimpleDateFormat("dd-MM-yyyy HH:MM");
+                    SimpleDateFormat fechaForm = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                     System.out.println("Por cuantas horas reservará la clase?");
                     Date fechaInicio = fechaForm.parse(fecha);
                     int horas = entrada.nextInt();
@@ -43,7 +43,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                     calendar.add(Calendar.HOUR_OF_DAY, horas);
                     Date fechaFinal = calendar.getTime();
                     propuesta.addFecha(fechaInicio, fechaFinal);
-                    System.out.println("Propuesta guardada con exito!(Desde "+fechaInicio+" hasta "+fechaFinal);
+                    System.out.println("Propuesta guardada con exito!(Desde "+fechaInicio+" hasta "+fechaFinal+"\n");
                 }
                 propuestas.add(propuesta);
                 break;
@@ -56,7 +56,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                         "de la tarde" + "Si no se sigue el formato, se lanzará una " + "Exception y " + "el programa fallara");
                 entrada.nextLine();
                 String fecha = entrada.nextLine();
-                SimpleDateFormat fechaForm = new SimpleDateFormat("dd-MM-yyyy HH:MM");
+                SimpleDateFormat fechaForm = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                 System.out.println("Por cuantas horas reservará la clase?");
                 int horas = entrada.nextInt();
                 Date fechaInicio = fechaForm.parse(fecha);
@@ -68,19 +68,20 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                 propuesta.addFecha(fechaInicio, fechaFinal);
 
                 int semanas = 1;
-                while(fechaInicio.compareTo(inicioSemestre) > 0 && fechaInicio.compareTo(finalSemestre) < 0){
+                Date fechaInicioAux = fechaInicio, fechaFinalAux = fechaFinal;
+                while(fechaInicioAux.compareTo(inicioSemestre) > 0 && fechaFinalAux.compareTo(finalSemestre) < 0){
                     calendar = Calendar.getInstance();
                     calendar.setTime(fechaInicio);
                     calendar.add(Calendar.WEEK_OF_YEAR, semanas);
-                    fechaInicio = calendar.getTime();
+                    fechaInicioAux = calendar.getTime();
                     calendar = Calendar.getInstance();
                     calendar.setTime(fechaFinal);
                     calendar.add(Calendar.WEEK_OF_YEAR, semanas);
-                    fechaFinal = calendar.getTime();
-                    propuesta.addFecha(fechaInicio, fechaFinal);
+                    fechaFinalAux = calendar.getTime();
+                    propuesta.addFecha(fechaInicioAux, fechaFinalAux);
                     semanas++;
                 }
-                System.out.println("Todas sus fechas han sido registradas con exito!");
+                System.out.println("Todas sus fechas han sido registradas con exito!\n");
                 propuestas.add(propuesta);
                 break;
 
