@@ -29,7 +29,7 @@ public abstract class Sala {
 
     private int pizarras;
 
-    private Date fechaReserva;
+    private Date fechaReservaConfirmada;
 
     private Incidencia[] incidencias;
 

@@ -6,6 +6,9 @@
 package asignacionsalas;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -17,8 +20,20 @@ public class AsignacionSalas {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws ParseException {
+        Scanner entrada = new Scanner(System.in);
         Universidad universidad = new Universidad();
+        System.out.println("Ingrese inicio del semestre: FORMATO dd-mm-aaaa");
+        String fechaI = entrada.nextLine();
+        SimpleDateFormat fechaForm = new SimpleDateFormat("dd-MM-yyyy");
+        Date inicioSemestre = fechaForm.parse(fechaI);
+        System.out.println("Ingrese final del semestre: FORMATO dd-mm-aaaa");
+        String fechaF = entrada.nextLine();
+        Date finalSemestre = fechaForm.parse(fechaF);
+        universidad.setInicioSemestre(inicioSemestre);
+        universidad.setFinalSemestre(finalSemestre);
+        System.out.println("Estos datos pueden ser cambiados luegos por el administrador");
         universidad.setNombre("Universidad de Talca");
+        System.out.println("Bienvenid@ a la "+universidad.getNombre());
         universidad.setCantEdificios(0);
         universidad.crearEdificio("Verde");
         universidad.crearEdificio("Amarillo");
@@ -68,7 +83,8 @@ public class AsignacionSalas {
         universidad.registrarResponsable("Ruth Garrido", 2);
 
         Responsables yo = universidad.getResponsable(1, "Hugo Castro");
-        yo.realizarReserva(yo, universidad);
+        yo.realizarReserva(yo, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
+        yo.getReservas(universidad);
         //responsables.verResponsable();
         //universidad.Serializar();
 

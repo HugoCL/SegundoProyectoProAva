@@ -3,6 +3,7 @@ package asignacionsalas;
 import java.io.*;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public abstract class Responsables implements Serializable {
@@ -11,7 +12,8 @@ public abstract class Responsables implements Serializable {
 
     private boolean isAdmin;
 
-    public void realizarReserva(Responsables reservador, Universidad universidad) throws ParseException {
+    public void realizarReserva(Responsables reservador, Universidad universidad, Date iSemestre, Date fSemestre)
+            throws ParseException {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Reservando como: "+reservador.getNombreCompleto());
         System.out.print("Edificios disponibles: ");
@@ -32,7 +34,7 @@ public abstract class Responsables implements Serializable {
                 int op = entrada.nextInt();
                 switch (op){
                     case 1:
-                        System.out.println("Elegiste Sala. Selecciona una de las siguientes.");
+                        System.out.println("Elegiste Sala. Selecciona una de las siguientes:");
                         edificio.printSalas();
                         System.out.println();
                         entrada.nextLine();
@@ -42,7 +44,7 @@ public abstract class Responsables implements Serializable {
                         for (SaladeClase sala: edificio.getSalas()) {
                             if (sala.getNombreSala().equals(salaEle)){
                                 System.out.println("Yas");
-                                sala.reservarPropuesta(reservador);
+                                sala.reservarPropuesta(reservador, iSemestre, fSemestre);
                             }
                         }
                 }
@@ -51,7 +53,14 @@ public abstract class Responsables implements Serializable {
 
 
     }
-
+    //ELIMINAR ESTE METODO ¡SOLO PRUEBAS!
+    public void getReservas(Universidad universidad){
+        ArrayList<Edificio> edificio = universidad.getEdificios();
+        Edificio edificoqi = edificio.get(0);
+        ArrayList<SaladeClase> sala = edificoqi.getSalas();
+        edificoqi.printSalas();
+        //saladv.printPropuestas();
+    }
     public void reportarIncidencia() {
     }
 

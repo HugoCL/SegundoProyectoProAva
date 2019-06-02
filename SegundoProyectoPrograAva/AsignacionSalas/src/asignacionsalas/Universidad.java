@@ -5,10 +5,15 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Universidad implements Serializable {
 
     private String nombre;
+
+    private Date inicioSemestre;
+
+    private Date finalSemestre;
 
     protected ArrayList<Edificio> edificios = new ArrayList<Edificio>();
 
@@ -165,5 +170,21 @@ public class Universidad implements Serializable {
 
     public void setCantEdificios(int cantEdificios) {
         this.cantEdificios = cantEdificios;
+    }
+
+    public Date getInicioSemestre() {
+        return inicioSemestre;
+    }
+
+    public void setInicioSemestre(Date inicioSemestre) {
+        this.inicioSemestre = inicioSemestre;
+    }
+
+    public Date getFinalSemestre() {
+        return finalSemestre;
+    }
+
+    public void setFinalSemestre(Date finalSemestre) {
+        this.finalSemestre = finalSemestre;
     }
 }

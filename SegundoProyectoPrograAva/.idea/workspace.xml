@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0742f16-bef7-4f49-ac92-ad4b73e6b39f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Propuesta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Administrativo.java" beforeDir="false" afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Administrativo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/AsignacionSalas.java" beforeDir="false" afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/AsignacionSalas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Edificio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Laboratorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Laboratorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Reserva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Responsables.java" beforeDir="false" afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Responsables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Sala.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/SaladeClase.java" beforeDir="false" afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/SaladeClase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Universidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Universidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AsignacionSalas/META-INF/AsignacionSalas.kotlin_module" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,13 +30,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Responsables.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+            <state relative-caret-position="-236">
+              <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2388#2389#0" expanded="true" />
                 <element signature="e#2425#2426#0" expanded="true" />
+                <element signature="e#2649#2650#0" expanded="true" />
                 <element signature="e#2701#2702#0" expanded="true" />
+                <element signature="e#2735#2736#0" expanded="true" />
                 <element signature="e#2765#2766#0" expanded="true" />
+                <element signature="e#2808#2809#0" expanded="true" />
                 <element signature="e#2839#2840#0" expanded="true" />
               </folding>
             </state>
@@ -41,20 +50,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/SaladeClase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+            <state relative-caret-position="153">
+              <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#305#316#0" expanded="true" />
+                <element signature="method#reservarConfirmada#0;class#SaladeClase#0" />
+                <element signature="method#crearSala#0;class#SaladeClase#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Reserva.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -62,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Sala.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-837">
-              <caret line="65" column="7" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+            <state relative-caret-position="187">
+              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1384#1385#0" expanded="true" />
@@ -92,10 +95,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Reserva.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="85" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Propuesta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#170#176#0" expanded="true" />
+                <element signature="e#246#252#0" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
+                <element signature="e#369#370#0" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/AsignacionSalas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="70" column="15" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="15" />
+            <state relative-caret-position="687">
+              <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,39 +139,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Universidad.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="154" column="25" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
+            <state relative-caret-position="483">
+              <caret line="158" column="31" selection-start-line="158" selection-start-column="31" selection-end-line="158" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5089#5090#0" expanded="true" />
-                <element signature="e#5107#5108#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Edificio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-              <folding>
-                <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-                <element signature="e#486#487#0" expanded="true" />
-                <element signature="e#1171#1172#0" expanded="true" />
-                <element signature="e#1199#1200#0" expanded="true" />
-                <element signature="e#1368#1369#0" expanded="true" />
-                <element signature="e#1400#1401#0" expanded="true" />
-                <element signature="e#1447#1448#0" expanded="true" />
-                <element signature="e#1489#1490#0" expanded="true" />
-                <element signature="e#1596#1597#0" expanded="true" />
-                <element signature="e#1627#1628#0" expanded="true" />
-                <element signature="e#1672#1673#0" expanded="true" />
-                <element signature="e#1712#1713#0" expanded="true" />
+                <element signature="e#5096#5097#0" expanded="true" />
+                <element signature="e#5128#5129#0" expanded="true" />
+                <element signature="e#5515#5516#0" expanded="true" />
+                <element signature="e#5552#5553#0" expanded="true" />
+                <element signature="e#5610#5611#0" expanded="true" />
+                <element signature="e#5662#5663#0" expanded="true" />
+                <element signature="e#5700#5701#0" expanded="true" />
+                <element signature="e#5736#5737#0" expanded="true" />
+                <element signature="e#5792#5793#0" expanded="true" />
+                <element signature="e#5842#5843#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,10 +161,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Laboratorio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="121">
+              <caret line="27" column="99" selection-start-line="27" selection-start-column="99" selection-end-line="27" selection-end-column="99" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#310#321#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,11 +205,13 @@
         <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Empleado.java" />
         <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/DTI.java" />
         <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/InsumosTecnologicos.java" />
-        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Reserva.java" />
-        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Laboratorio.java" />
-        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Sala.java" />
-        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Universidad.java" />
         <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Edificio.java" />
+        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Administrativo.java" />
+        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Sala.java" />
+        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Reserva.java" />
+        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Universidad.java" />
+        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Laboratorio.java" />
+        <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Propuesta.java" />
         <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/AsignacionSalas.java" />
         <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Responsables.java" />
         <option value="$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/SaladeClase.java" />
@@ -199,8 +219,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
-    <option name="width" value="1186" />
+    <option name="x" value="479" />
+    <option name="y" value="35" />
+    <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -208,7 +229,32 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SegundoProyectoPrograAva" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsignacionSalas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SegundoProyectoPrograAva" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsignacionSalas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SegundoProyectoPrograAva" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsignacionSalas" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="asignacionsalas" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -223,7 +269,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -288,18 +334,23 @@
       <workItem from="1559359240733" duration="2858000" />
       <workItem from="1559362428564" duration="171000" />
       <workItem from="1559362808278" duration="528000" />
-      <workItem from="1559363446142" duration="4293000" />
+      <workItem from="1559363446142" duration="4491000" />
+      <workItem from="1559397207807" duration="646000" />
+      <workItem from="1559403105007" duration="2764000" />
+      <workItem from="1559428708888" duration="769000" />
+      <workItem from="1559435149958" duration="1428000" />
+      <workItem from="1559444440835" duration="6935000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27604000" />
+    <option name="totallyTimeSpent" value="40344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.11043873" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15658094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24962178" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -318,7 +369,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32733223" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32569557" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -330,7 +381,7 @@
       <window_info anchor="right" id="Database" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.11043873" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15658094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24962178" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -349,7 +400,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32890365" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32569557" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -385,6 +436,20 @@
                 </list>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -496,24 +561,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Administrativo.java">
+    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Edificio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        <state relative-caret-position="680">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Reserva.java">
+    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Administrativo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        <state relative-caret-position="391">
+          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="523" column="28" selection-start-line="523" selection-start-column="28" selection-end-line="523" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Sala.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-837">
-          <caret line="65" column="7" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+        <state relative-caret-position="187">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1384#1385#0" expanded="true" />
@@ -540,10 +612,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Reserva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="85" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Laboratorio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="121">
+          <caret line="27" column="99" selection-start-line="27" selection-start-column="99" selection-end-line="27" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#310#321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Propuesta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#170#176#0" expanded="true" />
+            <element signature="e#246#252#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Responsables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-236">
+          <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2388#2389#0" expanded="true" />
+            <element signature="e#2425#2426#0" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
+            <element signature="e#2701#2702#0" expanded="true" />
+            <element signature="e#2735#2736#0" expanded="true" />
+            <element signature="e#2765#2766#0" expanded="true" />
+            <element signature="e#2808#2809#0" expanded="true" />
+            <element signature="e#2839#2840#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/AsignacionSalas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -552,68 +679,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Universidad.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="154" column="25" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
+        <state relative-caret-position="483">
+          <caret line="158" column="31" selection-start-line="158" selection-start-column="31" selection-end-line="158" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5089#5090#0" expanded="true" />
-            <element signature="e#5107#5108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Edificio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1199#1200#0" expanded="true" />
-            <element signature="e#1368#1369#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1447#1448#0" expanded="true" />
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="e#1596#1597#0" expanded="true" />
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1672#1673#0" expanded="true" />
-            <element signature="e#1712#1713#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/AsignacionSalas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="70" column="15" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/Responsables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2425#2426#0" expanded="true" />
-            <element signature="e#2701#2702#0" expanded="true" />
-            <element signature="e#2765#2766#0" expanded="true" />
-            <element signature="e#2839#2840#0" expanded="true" />
+            <element signature="e#5096#5097#0" expanded="true" />
+            <element signature="e#5128#5129#0" expanded="true" />
+            <element signature="e#5515#5516#0" expanded="true" />
+            <element signature="e#5552#5553#0" expanded="true" />
+            <element signature="e#5610#5611#0" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5700#5701#0" expanded="true" />
+            <element signature="e#5736#5737#0" expanded="true" />
+            <element signature="e#5792#5793#0" expanded="true" />
+            <element signature="e#5842#5843#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AsignacionSalas/src/asignacionsalas/SaladeClase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        <state relative-caret-position="153">
+          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#305#316#0" expanded="true" />
+            <element signature="method#reservarConfirmada#0;class#SaladeClase#0" />
+            <element signature="method#crearSala#0;class#SaladeClase#0" />
           </folding>
         </state>
       </provider>

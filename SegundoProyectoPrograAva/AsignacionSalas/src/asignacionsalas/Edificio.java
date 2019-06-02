@@ -40,7 +40,12 @@ public class Edificio {
         System.out.println(sala.getProfResponsable());
     }*/
 
-    public void agregarLaboratorio(){
+    public void agregarLaboratorio(String nombre, String actividad, int capacidad, int computadores, int datas, int mesas,
+                                   int pizarras, String nombreProfesor, int telones, int sillas){
+
+        Laboratorio laboratorio =  new Laboratorio();
+        laboratorio.crearLaboratorio(nombre, actividad, capacidad, computadores, datas, mesas, pizarras, nombreProfesor,
+                telones, sillas);
 
     }
 
