@@ -61,6 +61,7 @@ public abstract class Responsables implements Serializable {
         SaladeClase sala = salas.get(0);
         sala.printPropuestas();
     }
+
     public void reportarIncidencia() {
     }
 
