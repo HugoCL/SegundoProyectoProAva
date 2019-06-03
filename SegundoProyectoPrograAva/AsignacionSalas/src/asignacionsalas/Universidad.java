@@ -27,8 +27,6 @@ public class Universidad implements Serializable {
 
     private int cantEdificios;
 
-    public void eliminarSala() {
-    }
 
     /***
      *
@@ -186,5 +184,13 @@ public class Universidad implements Serializable {
 
     public void setFinalSemestre(Date finalSemestre) {
         this.finalSemestre = finalSemestre;
+    }
+
+    public ArrayList<DTI> getEmpleadosDTI() {
+        return empleadosDTI;
+    }
+
+    public void setEmpleadosDTI(ArrayList<DTI> empleadosDTI) {
+        this.empleadosDTI = empleadosDTI;
     }
 }

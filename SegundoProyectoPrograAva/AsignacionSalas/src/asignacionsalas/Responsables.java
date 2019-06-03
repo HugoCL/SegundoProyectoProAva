@@ -30,7 +30,7 @@ public abstract class Responsables implements Serializable {
                 System.out.println();
                 System.out.println("Laboratorios disponibles: ");
                 edificio.printLabs();
-                System.out.println("Desea reservar sala[1] o laboratorio[2]?");
+                System.out.println("Desea reservar sala[1] o laboratorio[2] (Solo para profesores)?");
                 int op = entrada.nextInt();
                 switch (op){
                     case 1:
@@ -43,10 +43,22 @@ public abstract class Responsables implements Serializable {
                         System.out.println(salaEle);
                         for (SaladeClase sala: edificio.getSalas()) {
                             if (sala.getNombreSala().equals(salaEle)){
-                                System.out.println("Yas");
-                                sala.reservarPropuesta(reservador, iSemestre, fSemestre);
+                                System.out.println("Ingrese cantidad de alumnos: ");
+                                int cantAlumnos = entrada.nextInt();
+                                if (cantAlumnos > sala.getCapacidad()){
+                                    System.out.println("La cantidad de alumnos excede la capacidad de la sala. Reserva terminada");
+                                }
+                                else if (sala.isConfirmada()){
+                                    System.out.println("Esta sala ya se encuentra con una reserva confirmada. Reserva terminada");
+                                }
+                                else {
+                                    sala.reservarPropuesta(reservador, iSemestre, fSemestre);
+                                }
                             }
                         }
+                        break;
+                    default:
+                        throw new IllegalStateException("Valor inesperado: " + op);
                 }
             }
         }
