@@ -44,6 +44,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                     Date fechaFinal = calendar.getTime();
                     propuesta.addFecha(fechaInicio, fechaFinal);
                     System.out.println("Propuesta guardada con exito!(Desde "+fechaInicio+" hasta "+fechaFinal+"\n");
+                    propuesta.setReservador(reservador);
                 }
                 propuestas.add(propuesta);
                 break;
@@ -80,6 +81,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                     fechaFinalAux = calendar.getTime();
                     propuesta.addFecha(fechaInicioAux, fechaFinalAux);
                     semanas++;
+                    propuesta.setReservador(reservador);
                 }
                 System.out.println("Todas sus fechas han sido registradas con exito!\n");
                 propuestas.add(propuesta);
@@ -108,7 +110,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
 
     @SuppressWarnings("Duplicates")
     public void crearSala(String nombre, String actividad, int capacidad, int computadores, int datas, int mesas,
-                          int pizarras, String profesor, int telones, int sillas) {
+                          int pizarras, int telones, int sillas) {
 
         setNombreSala(nombre);
         setActividad(actividad);
@@ -122,7 +124,6 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
         }
         setMesas(mesas);
         setPizarras(pizarras);
-        //setProfResponsable(profesor);
         setPropuesta(false);
         setTelones(telones);
         setSillas(sillas);

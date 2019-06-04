@@ -27,9 +27,9 @@ public class Edificio {
     }
 
     public void agregarSalaClases(String nombre, String actividad, int capacidad, int computadores, int datas, int mesas,
-                                  int pizarras, String nombreProfesor, int telones, int sillas){
+                                  int pizarras, int telones, int sillas){
         SaladeClase nuevaSala = new SaladeClase();
-        nuevaSala.crearSala(nombre, actividad, capacidad, computadores, datas, mesas, pizarras, nombreProfesor, telones,
+        nuevaSala.crearSala(nombre, actividad, capacidad, computadores, datas, mesas, pizarras, telones,
                 sillas);
         salas.add(nuevaSala);
         setCantSalas(getCantSalas()+1);
@@ -41,11 +41,13 @@ public class Edificio {
     }*/
 
     public void agregarLaboratorio(String nombre, String actividad, int capacidad, int computadores, int datas, int mesas,
-                                   int pizarras, String nombreProfesor, int telones, int sillas){
+                                   int pizarras, int telones, int sillas){
 
         Laboratorio laboratorio =  new Laboratorio();
-        laboratorio.crearLaboratorio(nombre, actividad, capacidad, computadores, datas, mesas, pizarras, nombreProfesor,
+        laboratorio.crearLaboratorio(nombre, actividad, capacidad, computadores, datas, mesas, pizarras,
                 telones, sillas);
+        laboratorios.add(laboratorio);
+        setCantLabs(getCantLabs()+1);
 
     }
 
@@ -54,8 +56,13 @@ public class Edificio {
     }
 
     public void printSalas(){
-        for (SaladeClase sala: salas) {
-            System.out.print(sala.getNombreSala()+" (Capacidad: "+sala.getCapacidad()+") ");
+        if (salas.size() == 0){
+            System.out.println("No hay salas disponibles en este edificio");
+        }
+        else{
+            for (SaladeClase sala: salas) {
+                System.out.print(sala.getNombreSala()+" (Capacidad: "+sala.getCapacidad()+") ");
+            }
         }
     }
 

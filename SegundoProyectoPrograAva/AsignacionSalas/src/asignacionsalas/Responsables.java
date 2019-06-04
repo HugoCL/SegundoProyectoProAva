@@ -12,6 +12,8 @@ public abstract class Responsables implements Serializable {
 
     private boolean isAdmin;
 
+    private PerfilAdmin perfilAdmin;
+
     public void realizarReserva(Responsables reservador, Universidad universidad, Date iSemestre, Date fSemestre)
             throws ParseException {
         Scanner entrada = new Scanner(System.in);
@@ -30,6 +32,7 @@ public abstract class Responsables implements Serializable {
                 System.out.println();
                 System.out.println("Laboratorios disponibles: ");
                 edificio.printLabs();
+                System.out.println();
                 System.out.println("Desea reservar sala[1] o laboratorio[2] (Solo para profesores)?");
                 int op = entrada.nextInt();
                 switch (op){
@@ -57,6 +60,13 @@ public abstract class Responsables implements Serializable {
                             }
                         }
                         break;
+                    case 2:
+                        if (reservador instanceof Estudiante && !reservador.isAdmin()){
+                            System.out.println("No tienes el permiso para realizar esta acción");
+                        }
+                        else{
+                        }
+                        break;
                     default:
                         throw new IllegalStateException("Valor inesperado: " + op);
                 }
@@ -81,6 +91,13 @@ public abstract class Responsables implements Serializable {
         return nombreCompleto;
     }
 
+    public void setPerfilAdmin(PerfilAdmin perfilAdmin) {
+        this.perfilAdmin = perfilAdmin;
+    }
+
+    public PerfilAdmin getPerfilAdmin(){
+        return perfilAdmin;
+    }
 
     /*
     public void verResponsable(){

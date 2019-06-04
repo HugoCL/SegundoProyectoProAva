@@ -1,5 +1,6 @@
 package asignacionsalas;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Administrativo extends Responsables {
@@ -24,5 +25,9 @@ public class Administrativo extends Responsables {
                 edificio.printLabs();
             }
         }
+    }
+
+    public void menu(Administrativo administrativo, Universidad universidad, Date iSemestre, Date fSemestre){
+
     }
 }

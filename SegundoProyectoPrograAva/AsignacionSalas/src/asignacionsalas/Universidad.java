@@ -35,13 +35,17 @@ public class Universidad implements Serializable {
      */
 
     public void crearSala(String color, int SalaoLab, String nombre, String actividad, int capacidad, int computadores, int datas, int mesas,
-                          int pizarras, String nombreProfesor, int telones, int sillas) {
+                          int pizarras, int telones, int sillas) {
         for (int i = 0; i < edificios.size(); i++) {
             Edificio edificioActual = edificios.get(i);
             if (edificioActual.getColor().equals(color)) {
                 if (SalaoLab == 0){
                     edificioActual.agregarSalaClases(nombre, actividad, capacidad, computadores, datas, mesas,
-                            pizarras, nombreProfesor, telones, sillas);
+                            pizarras, telones, sillas);
+                }
+                else{
+                    edificioActual.agregarLaboratorio(nombre, actividad, capacidad, computadores, datas, mesas, pizarras,
+                            telones, sillas);
                 }
             }
         }
@@ -119,6 +123,7 @@ public class Universidad implements Serializable {
                     return estudiante;
                 }
             }
+            System.out.println("No se encontro el estudiante");
         }
         else if (rol == 2){
             for (Administrativo administrativo : administrativos) {
@@ -126,6 +131,7 @@ public class Universidad implements Serializable {
                     return administrativo;
                 }
             }
+            System.out.println("No se encontro el administrativo");
         }
         else if (rol == 3){
             for (Profesor profesor : profesores) {
@@ -133,13 +139,13 @@ public class Universidad implements Serializable {
                     return profesor;
                 }
             }
+            System.out.println("No se encontro el profesor");
         }
         else{
-            System.out.println("No se encontró esa persona");
+            System.out.println("Rol no existe");
             return null;
         }
-        System.out.println("Rol no existe");
-        return null;
+        return  null;
     }
 
     public void getAllEdificios(){

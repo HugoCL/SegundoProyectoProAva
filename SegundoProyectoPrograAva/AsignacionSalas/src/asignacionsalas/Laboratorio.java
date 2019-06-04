@@ -43,7 +43,7 @@ public class Laboratorio extends Sala implements Reserva, Serializable {
                     calendar.add(Calendar.HOUR_OF_DAY, horas);
                     Date fechaFinal = calendar.getTime();
                     propuesta.addFecha(fechaInicio, fechaFinal);
-                    System.out.println("Propuesta guardada con exito!(Desde "+fechaInicio+" hasta "+fechaFinal+"\n");
+                    System.out.println("Propuesta de laboratorio guardada con exito!(Desde "+fechaInicio+" hasta "+fechaFinal+"\n");
                 }
                 propuestas.add(propuesta);
                 break;
@@ -80,8 +80,9 @@ public class Laboratorio extends Sala implements Reserva, Serializable {
                     fechaFinalAux = calendar.getTime();
                     propuesta.addFecha(fechaInicioAux, fechaFinalAux);
                     semanas++;
+                    propuesta.setReservador(reservador);
                 }
-                System.out.println("Todas sus fechas han sido registradas con exito!\n");
+                System.out.println("Todas sus fechas de laboratorio han sido registradas con exito!\n");
                 propuestas.add(propuesta);
                 break;
 
@@ -98,7 +99,7 @@ public class Laboratorio extends Sala implements Reserva, Serializable {
     }
 
     public void crearLaboratorio(String nombre, String actividad, int capacidad, int computadores, int datas, int mesas,
-                                 int pizarras, String nombreProfesor, int telones, int sillas){
+                                 int pizarras, int telones, int sillas){
 
         setNombreSala(nombre);
         setActividad(actividad);
@@ -113,7 +114,7 @@ public class Laboratorio extends Sala implements Reserva, Serializable {
         //Aqui falta el set profesor
         setTelones(telones);
         setSillas(sillas);
-
+        setMesas(mesas);
 
     }
 }
