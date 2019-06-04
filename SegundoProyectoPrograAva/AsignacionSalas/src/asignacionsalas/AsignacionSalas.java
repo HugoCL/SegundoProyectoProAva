@@ -77,11 +77,11 @@ public class AsignacionSalas {
 
         //universidad.verDatos();
 
-        universidad.registrarResponsable("Hugo Castro", 1);
-        universidad.registrarResponsable("Cesar", 1);
-        universidad.registrarResponsable("Ariel Rojas", 1);
-        universidad.registrarResponsable("Rodrigo Pavez", 3);
-        universidad.registrarResponsable("Ruth Garrido", 2);
+        universidad.registrarResponsable("Hugo Castro", 1, "Hugo Castro", "1234");
+        universidad.registrarResponsable("Cesar", 1, "Cesar Alvear", "1234");
+        universidad.registrarResponsable("Ariel Rojas", 1, "Ariel Rojas", "1234");
+        universidad.registrarResponsable("Rodrigo Pavez", 3, "Rodrigo Pavez", "1234");
+        universidad.registrarResponsable("Ruth Garrido", 2, "Ruth Garrido", "1234");
 
         // Creacion del perfil de admin
         Profesor admin = (Profesor) universidad.getResponsable(3, "Rodrigo Pavez");
@@ -98,30 +98,52 @@ public class AsignacionSalas {
             rolM = entrada.nextInt();
             switch (rolM){
                 case 1:
-                    System.out.println("Ingrese su nombre completo para iniciar sesión (Sensible a mayusculas y minisculas");
+                    System.out.println("Ingrese su nombre de usuario, que es su nombre completo por defecto" +
+                            "(Sensible a mayusculas y minisculas)");
                     entrada.nextLine();
                     String nombre = entrada.nextLine();
                     Estudiante estudiante = (Estudiante) universidad.getResponsable(1, nombre);
-                    if (estudiante != null){
-                        estudiante.menu(estudiante, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
+                    if (estudiante != null ){
+                        System.out.println("Ingrese su password");
+                        String pass = entrada.nextLine();
+                        if (pass.equals(estudiante.getPerfil().getPassword())){
+                            estudiante.menu(estudiante, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
+                        }
+                        else{
+                            System.out.println("Contraseña incorrecta!");
+                        }
                     }
                     break;
                 case 2:
-                    System.out.println("Ingrese su nombre completo para iniciar sesión (Sensible a mayusculas y minisculas");
+                    System.out.println("Ingrese su nombre completo para iniciar sesión (Sensible a mayusculas y minisculas)");
                     entrada.nextLine();
                     String nombreAd = entrada.nextLine();
                     Administrativo administrativo = (Administrativo) universidad.getResponsable(2, nombreAd);
                     if (administrativo != null){
-                        administrativo.menu(administrativo, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
+                        System.out.println("Ingrese su password");
+                        String pass = entrada.nextLine();
+                        if (pass.equals(administrativo.getPerfil().getPassword())){
+                            administrativo.menu(administrativo, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
+                        }
+                        else{
+                            System.out.println("La contraseña es incorrecta!");
+                        }
                     }
                     break;
                 case 3:
-                    System.out.println("Ingrese su nombre completo para iniciar sesión (Sensible a mayusculas y minisculas");
+                    System.out.println("Ingrese su nombre completo para iniciar sesión (Sensible a mayusculas y minisculas)");
                     entrada.nextLine();
                     String nombrePro = entrada.nextLine();
                     Profesor profesor = (Profesor) universidad.getResponsable(3, nombrePro);
                     if (profesor != null){
-                        profesor.menu(profesor, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
+                        System.out.println("Ingrese su password");
+                        String pass = entrada.nextLine();
+                        if (pass.equals(profesor.getPerfil().getPassword())){
+                            profesor.menu(profesor, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
+                        }
+                        else{
+                            System.out.println("Contraseña incorrecta!");
+                        }
                     }
                     break;
                 case 4:
@@ -141,8 +163,8 @@ public class AsignacionSalas {
                                 String user = entrada.nextLine();
                                 System.out.println("Ingresa tu password");
                                 String pass = entrada.nextLine();
-                                String userC = estudianteAdmin.getPerfilAdmin().getNombreUsuario();
-                                String passC = estudianteAdmin.getPerfilAdmin().getPassword();
+                                String userC = estudianteAdmin.getPerfil().getNombreUsuario();
+                                String passC = estudianteAdmin.getPerfil().getPassword();
                                 if (user.equals(userC) && pass.equals(passC)){
                                     System.out.println("Has ingresado correctamente");
                                     // Aqui va el menu de admin
@@ -165,8 +187,8 @@ public class AsignacionSalas {
                                 String user = entrada.nextLine();
                                 System.out.println("Ingresa tu password");
                                 String pass = entrada.nextLine();
-                                String userC = profesorAdmin.getPerfilAdmin().getNombreUsuario();
-                                String passC = profesorAdmin.getPerfilAdmin().getPassword();
+                                String userC = profesorAdmin.getPerfil().getNombreUsuario();
+                                String passC = profesorAdmin.getPerfil().getPassword();
                                 if (user.equals(userC) && pass.equals(passC)){
                                     System.out.println("Has ingresado correctamente");
                                     // Aqui va el menu de admin
@@ -185,6 +207,8 @@ public class AsignacionSalas {
                     }
               }
         }while(rolM != 5);
+
+        System.out.println("Cerrando sistema, ¡muchas gracias por usarlo!");
         //Responsables yo = universidad.getResponsable(1, "Hugo Castro");
         //yo.realizarReserva(yo, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
         //yo.getReservas(universidad);

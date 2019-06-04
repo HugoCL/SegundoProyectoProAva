@@ -1,10 +1,12 @@
 package asignacionsalas;
 
-public class PerfilAdmin {
+public class Perfil {
 
     private String nombreUsuario;
 
     private String password;
+
+    private boolean isAdmin;
 
     public void verReservas() {
     }
@@ -23,5 +25,13 @@ public class PerfilAdmin {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }

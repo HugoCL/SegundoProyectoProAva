@@ -81,6 +81,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                     fechaFinalAux = calendar.getTime();
                     propuesta.addFecha(fechaInicioAux, fechaFinalAux);
                     semanas++;
+                    System.out.println("Desde "+fechaInicioAux+" hasta "+fechaFinalAux);
                     propuesta.setReservador(reservador);
                 }
                 System.out.println("Todas sus fechas han sido registradas con exito!\n");
@@ -135,5 +136,12 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
         for (Propuesta propuesta: propuestas) {
             propuesta.getFechas();
         }
+    }
+
+    /***
+     *
+     * @param rol es un int que identifica a que tipo de reservas se verá. 1 para estudiante, 2 para profesor, 3 para admin
+     */
+    public void getPropuestasOrdenadas(int rol){
     }
 }

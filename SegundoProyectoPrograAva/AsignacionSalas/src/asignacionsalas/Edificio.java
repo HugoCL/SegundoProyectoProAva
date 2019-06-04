@@ -55,6 +55,10 @@ public class Edificio {
         return salas;
     }
 
+    public ArrayList<Laboratorio> getLaboratorios(){
+        return laboratorios;
+    }
+
     public void printSalas(){
         if (salas.size() == 0){
             System.out.println("No hay salas disponibles en este edificio");

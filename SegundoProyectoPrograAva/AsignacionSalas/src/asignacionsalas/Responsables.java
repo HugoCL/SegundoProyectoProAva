@@ -12,7 +12,7 @@ public abstract class Responsables implements Serializable {
 
     private boolean isAdmin;
 
-    private PerfilAdmin perfilAdmin;
+    private Perfil perfilUser;
 
     public void realizarReserva(Responsables reservador, Universidad universidad, Date iSemestre, Date fSemestre)
             throws ParseException {
@@ -86,17 +86,20 @@ public abstract class Responsables implements Serializable {
 
     public void reportarIncidencia() {
     }
-
     public String getNombreCompleto() {
         return nombreCompleto;
     }
 
-    public void setPerfilAdmin(PerfilAdmin perfilAdmin) {
-        this.perfilAdmin = perfilAdmin;
+    public void configPerfil(String user, String pass) {
+        Perfil perfil = new Perfil();
+        perfil.setAdmin(false);
+        perfil.setNombreUsuario(user);
+        perfil.setPassword(pass);
+        this.perfilUser = perfil;
     }
 
-    public PerfilAdmin getPerfilAdmin(){
-        return perfilAdmin;
+    public Perfil getPerfil(){
+        return perfilUser;
     }
 
     /*
@@ -109,7 +112,6 @@ public abstract class Responsables implements Serializable {
     public void setNombreCompleto(String nombreCompleto) {
         this.nombreCompleto = nombreCompleto;
     }
-
 
 
     public boolean isAdmin() {

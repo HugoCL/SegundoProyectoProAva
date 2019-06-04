@@ -14,8 +14,6 @@ public abstract class Sala {
 
     private boolean confirmada;
 
-    private String profResponsable;
-
     private String actividad;
 
     private int sillas;

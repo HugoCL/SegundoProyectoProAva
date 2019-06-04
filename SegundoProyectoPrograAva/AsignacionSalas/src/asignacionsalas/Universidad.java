@@ -79,20 +79,23 @@ public class Universidad implements Serializable {
      *            3 para profesor
      */
 
-    public void registrarResponsable(String nombreCompleto, int rol){
+    public void registrarResponsable(String nombreCompleto, int rol, String user, String pass){
         if (rol == 1){
             Estudiante estudiante = new Estudiante();
             estudiante.setNombreCompleto(nombreCompleto);
+            estudiante.configPerfil(user, pass);
             estudiantes.add(estudiante);
         }
         else if (rol == 2){
             Administrativo administrativo = new Administrativo();
             administrativo.setNombreCompleto(nombreCompleto);
+            administrativo.configPerfil(user, pass);
             administrativos.add(administrativo);
         }
         else if (rol == 3){
             Profesor profesor = new Profesor();
             profesor.setNombreCompleto(nombreCompleto);
+            profesor.configPerfil(user, pass);
             profesores.add(profesor);
         }
     }
