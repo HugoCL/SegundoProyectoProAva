@@ -38,6 +38,9 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                     calendar.add(Calendar.HOUR_OF_DAY, horas);
                     Date fechaFinal = calendar.getTime();
                     propuesta.addFecha(fechaInicio, fechaFinal);
+                    entrada.nextLine();
+                    System.out.println("Ingrese la actividad a realizar");
+                    propuesta.setActividad(entrada.nextLine());
                     System.out.println("Propuesta guardada con exito!(Desde "+fechaInicio+" hasta "+fechaFinal+"\n");
                     propuesta.setReservador(reservador);
                     propuesta.setForAllSem(false);
@@ -77,9 +80,13 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                     calendar.add(Calendar.WEEK_OF_YEAR, semanas);
                     fechaFinalAux = calendar.getTime();
                     propuesta.addFecha(fechaInicioAux, fechaFinalAux);
+                    entrada.nextLine();
+                    System.out.println("Ingrese la actividad a realizar estas clases");
+                    propuesta.setActividad(entrada.nextLine());
                     semanas++;
                     System.out.println("Desde "+fechaInicioAux+" hasta "+fechaFinalAux);
                     propuesta.setReservador(reservador);
+
                 }
                 System.out.println("Todas sus fechas han sido registradas con exito!\n");
                 propuesta.setForAllSem(true);

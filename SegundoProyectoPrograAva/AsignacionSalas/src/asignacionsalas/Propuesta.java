@@ -9,6 +9,7 @@ public class Propuesta {
     private ArrayList<Date> fechasPropuestasFinal = new ArrayList<Date>();
     private Responsables reservador;
     private boolean isForAllSem;
+    private String Actividad;
 
     public void addFecha(Date fechaInicio, Date fechaFinal) {
         fechasPropuestasInicio.add(fechaInicio);
@@ -52,5 +53,13 @@ public class Propuesta {
 
     public ArrayList<Date> getFechasPropuestasInicio() {
         return fechasPropuestasInicio;
+    }
+
+    public String getActividad() {
+        return Actividad;
+    }
+
+    public void setActividad(String actividad) {
+        Actividad = actividad;
     }
 }
