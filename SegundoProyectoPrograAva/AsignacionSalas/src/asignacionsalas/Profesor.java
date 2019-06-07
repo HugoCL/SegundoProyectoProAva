@@ -7,16 +7,6 @@ import java.util.Scanner;
 
 public class Profesor extends Responsables {
 
-    private Perfil perfilAdmin;
-
-
-    public void crearPerfilAdmin(String user, String pass) {
-        Perfil perfil = new Perfil();
-        perfil.setNombreUsuario(user);
-        perfil.setPassword(pass);
-        setAdmin(true);
-        setPerfilAdmin(perfil);
-    }
 
     public void menu(Profesor profesor, Universidad universidad, Date iSemestre, Date fSemestre) throws ParseException {
         int op = 0;
@@ -42,48 +32,5 @@ public class Profesor extends Responsables {
                 System.out.println("Opcion no valida!");
             }
         }while(op != 3);
-    }
-
-    public void menuAdmin(Universidad universidad){
-        Scanner entrada = new Scanner(System.in);
-        int op = 0;
-        System.out.println("MENU DE ADMIN");
-        System.out.println("[1] Mostrar todas las reservas hechas (Propuestas)");
-        System.out.println("[2] Mostrar todas las reservas hechas (Confirmadas)");
-        System.out.println("[2] Ver todos los incidentes");
-        System.out.println("[3] Crear un nuevo estudiante o profesor");
-        System.out.println("[4] Cerrar sesion");
-        System.out.println("Ingrese su opcion -> ");
-        op = entrada.nextInt();
-        switch(op){
-            case 1:
-                System.out.println("A continuacion se mostraran todas las reservas hechas");
-                ArrayList<Edificio> edificios = universidad.getEdificios();
-                // se inicia con los Estudiantes (0) y luego los profesores(1)
-                int flagEP = 0;
-                while (flagEP != 2){
-                    for (Edificio edificio: edificios) {
-                        ArrayList<SaladeClase> salas = edificio.getSalas();
-                        ArrayList<Laboratorio> laboratorios = edificio.getLaboratorios();
-                        for (SaladeClase sala: salas) {
-                            //SaladeClase reservacion = sala.get
-                            for (Laboratorio laboratorio: laboratorios){
-
-                            }
-                        }
-                    }
-                }
-                break;
-            default:
-                throw new IllegalStateException("Valor inseperado: " + op);
-        }
-    }
-
-    public Perfil getPerfilAdmin() {
-        return perfilAdmin;
-    }
-
-    public void setPerfilAdmin(Perfil perfilAdmin) {
-        this.perfilAdmin = perfilAdmin;
     }
 }

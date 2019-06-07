@@ -21,7 +21,7 @@ public class Universidad implements Serializable {
 
     private ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
 
-    private ArrayList<Administrativo> administrativos = new ArrayList<Administrativo>();
+    private ArrayList<Administrador> administradores = new ArrayList<Administrador>();
 
     private ArrayList<Profesor> profesores = new ArrayList<Profesor>();
 
@@ -87,10 +87,10 @@ public class Universidad implements Serializable {
             estudiantes.add(estudiante);
         }
         else if (rol == 2){
-            Administrativo administrativo = new Administrativo();
-            administrativo.setNombreCompleto(nombreCompleto);
-            administrativo.configPerfil(user, pass);
-            administrativos.add(administrativo);
+            Administrador administrador = new Administrador();
+            administrador.setNombreCompleto(nombreCompleto);
+            administrador.crearPerfilAdmin(user, pass);
+            administradores.add(administrador);
         }
         else if (rol == 3){
             Profesor profesor = new Profesor();
@@ -129,9 +129,9 @@ public class Universidad implements Serializable {
             System.out.println("No se encontro el estudiante");
         }
         else if (rol == 2){
-            for (Administrativo administrativo : administrativos) {
-                if (administrativo.getNombreCompleto().equals(nombreCompleto)) {
-                    return administrativo;
+            for (Administrador administrador : administradores) {
+                if (administrador.getPerfilAdmin().getNombreUsuario().equals(nombreCompleto)) {
+                    return administrador;
                 }
             }
             System.out.println("No se encontro el administrativo");

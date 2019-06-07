@@ -3,10 +3,7 @@ package asignacionsalas;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Calendar;
-import java.util.Scanner;
+import java.util.*;
 
 public class SaladeClase extends Sala implements Reserva, Serializable{
 
@@ -18,16 +15,14 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
         System.out.println("Que clase de reservacion desea realizar?");
         System.out.println("[1] Reservacion de una o varias fechas");
         System.out.println("[2] Reservacion por un semestre");
-        Propuesta propuesta = new Propuesta();
         int op = entrada.nextInt();
         switch (op){
             case 1:
                 System.out.println("Ha seleccionado reservacion de una o varias fechas");
                 System.out.println("Cuantas fechas de clases desea agregar?");
                 int nClases = entrada.nextInt();
-
                 for (int i = 0; i <nClases; i++) {
-
+                    Propuesta propuesta = new Propuesta();
                     System.out.println("Ingrese su fecha propuesta numero "+i+" junto a la hora de inicio para" +
                             " esta Sala de clases FORMATO: dd-mm-aaaa hh-mm");
                     System.out.println("Ejemplo -> 05-06-2020 13:00 (Clase el dia 5 de junio del 2000 desde las 1 " +
@@ -45,11 +40,13 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                     propuesta.addFecha(fechaInicio, fechaFinal);
                     System.out.println("Propuesta guardada con exito!(Desde "+fechaInicio+" hasta "+fechaFinal+"\n");
                     propuesta.setReservador(reservador);
+                    propuesta.setForAllSem(false);
+                    propuestas.add(propuesta);
                 }
-                propuestas.add(propuesta);
                 break;
 
             case 2:
+                Propuesta propuesta = new Propuesta();
                 System.out.println("Ha seleccionado reservacion por un semestre");
                     System.out.println("Ingrese la fecha de inicio de sus clases y hora de inicio para que su"  +
                             "propuesta se replique semanalmente hasta el fin de semestre FORMATO: dd-mm-aaaa hh-mm");
@@ -85,6 +82,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
                     propuesta.setReservador(reservador);
                 }
                 System.out.println("Todas sus fechas han sido registradas con exito!\n");
+                propuesta.setForAllSem(true);
                 propuestas.add(propuesta);
                 break;
 
@@ -138,10 +136,63 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
         }
     }
 
+    public ArrayList<Propuesta> getPropuestas(){
+        return propuestas;
+    }
     /***
      *
-     * @param rol es un int que identifica a que tipo de reservas se verá. 1 para estudiante, 2 para profesor, 3 para admin
+     *
      */
-    public void getPropuestasOrdenadas(int rol){
+    public void getPropuestasOrdenadas() throws ParseException{
+        System.out.println("\nSe imprimirán las propuestas de la Sala "+getNombreSala()+":");
+        if (propuestas.size() == 0){
+            System.out.println("No hay reservas para esta Sala");
+        }
+        else{
+            for (Propuesta propuestaF : propuestas) {
+                String nombreReservador = propuestaF.getReservador().getNombreCompleto();
+                if (propuestaF.isForAllSem()) {
+                    System.out.println("Propuesta por todo el semestre, parte el "+propuestaF.getFechaPuntualI(0)+" hasta "+
+                            propuestaF.getFechaPuntualF(0)+". La reserva termina el "+
+                            propuestaF.getFechaPuntualI(propuestaF.getFechasPropuestasInicio().size()-1)+" hasta "+
+                            propuestaF.getFechaPuntualF(propuestaF.getFechasPropuestasFinal().size()-1));
+                    System.out.println("Esta reserva fue hecha por:");
+                    if (propuestaF.getReservador() instanceof Profesor){
+                        System.out.println("Profesor "+ nombreReservador);
+                    }
+                    else if (propuestaF.getReservador() instanceof Estudiante){
+                        System.out.println("Estudiante "+ nombreReservador);
+                    }
+                    else{
+                        System.out.println(nombreReservador);
+                    }
+                }
+                else{
+                    int i = 0;
+                    int j = 0;
+                    int idPropuesta = 0;
+                    String fecha = "01-01-50000";
+                    SimpleDateFormat parseF = new SimpleDateFormat("dd-MM-yyyy");
+                    Date fechaMasReciente = parseF.parse(fecha);
+                    Date fechaAux;
+                    Propuesta propActual;
+                    while(i < propuestas.size()){
+                        while (j < propuestas.size()){
+                            propActual = propuestas.get(j);
+                            fechaAux = propActual.getFechaPuntualI(0);
+                            if (fechaAux.compareTo(fechaMasReciente) < 0){
+                                fechaMasReciente = fechaAux;
+                            }
+                            j++;
+                        }
+                        System.out.println("Desde "+propuestas.get(i).getFechaPuntualF(0)+" hasta "+
+                                propuestas.get(i).getFechaPuntualF(0));
+                        fecha = "01-01-2200";
+                        fechaMasReciente = parseF.parse(fecha);
+                        i++;
+                    }
+                }
+            }
+        }
     }
 }

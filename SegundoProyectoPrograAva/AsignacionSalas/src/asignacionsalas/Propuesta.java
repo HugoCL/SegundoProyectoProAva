@@ -8,6 +8,7 @@ public class Propuesta {
     private ArrayList<Date> fechasPropuestasInicio = new ArrayList<Date>();
     private ArrayList<Date> fechasPropuestasFinal = new ArrayList<Date>();
     private Responsables reservador;
+    private boolean isForAllSem;
 
     public void addFecha(Date fechaInicio, Date fechaFinal) {
         fechasPropuestasInicio.add(fechaInicio);
@@ -29,4 +30,27 @@ public class Propuesta {
         }
     }
 
+    public Date getFechaPuntualI(int id){
+        return fechasPropuestasInicio.get(id);
+    }
+
+    public Date getFechaPuntualF(int id){
+        return fechasPropuestasFinal.get(id);
+    }
+
+    public boolean isForAllSem() {
+        return isForAllSem;
+    }
+
+    public void setForAllSem(boolean forAllSem) {
+        isForAllSem = forAllSem;
+    }
+
+    public ArrayList<Date> getFechasPropuestasFinal() {
+        return fechasPropuestasFinal;
+    }
+
+    public ArrayList<Date> getFechasPropuestasInicio() {
+        return fechasPropuestasInicio;
+    }
 }

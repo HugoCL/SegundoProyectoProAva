@@ -9,7 +9,7 @@ public class Incidencia {
 
     private DTI EncargadoDTI;
 
-    private Administrativo EncargadoAdmin;
+    private Administrador EncargadoAdmin;
 
     private String rolEncargado;
 
@@ -31,11 +31,11 @@ public class Incidencia {
         this.EncargadoDTI = Encargado;
     }
 
-    public Administrativo getEncargadoAdmin() {
+    public Administrador getEncargadoAdmin() {
         return EncargadoAdmin;
     }
 
-    public void setEncargadoAdmin(Administrativo encargadoAdmin) {
+    public void setEncargadoAdmin(Administrador encargadoAdmin) {
         EncargadoAdmin = encargadoAdmin;
     }
 
@@ -67,15 +67,15 @@ public class Incidencia {
         setRolEncargado("DTI");
     }
 
-    public void asignarEncargadoAdmin(ArrayList<Administrativo> administrativos){
+    public void asignarEncargadoAdmin(ArrayList<Administrador> administradors){
         Scanner entrada  = new Scanner(System.in);
         System.out.println("Ingrese el administrativo que se encargará del problema:");
-        for (int i = 0; i < administrativos.size(); i++) {
-            System.out.println("["+i+"] "+administrativos.get(i).getNombreCompleto());
+        for (int i = 0; i < administradors.size(); i++) {
+            System.out.println("["+i+"] "+ administradors.get(i).getNombreCompleto());
         }
         System.out.println("Ingrese el numero del administrativo que desea asignar");
         int op = entrada.nextInt();
-        setEncargadoAdmin(administrativos.get(op));
-        setRolEncargado("Administrativo");
+        setEncargadoAdmin(administradors.get(op));
+        setRolEncargado("Administrador");
     }
 }

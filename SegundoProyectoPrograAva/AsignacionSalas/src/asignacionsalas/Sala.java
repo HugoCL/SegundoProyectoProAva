@@ -193,7 +193,7 @@ public abstract class Sala {
                 Incidencia incidencia = new Incidencia();
                 System.out.println("Ingrese los detalles de la incidencia:");
                 incidencia.setDetalleIncidencia(entrada.nextLine());
-                incidencia.setRolEncargado("Administrativo");
+                incidencia.setRolEncargado("Administrador");
                 incidencias.add(incidencia);
                 break;
 

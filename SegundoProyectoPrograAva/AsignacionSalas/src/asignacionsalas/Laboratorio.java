@@ -45,6 +45,7 @@ public class Laboratorio extends Sala implements Reserva, Serializable {
                     propuesta.addFecha(fechaInicio, fechaFinal);
                     System.out.println("Propuesta de laboratorio guardada con exito!(Desde "+fechaInicio+" hasta "+fechaFinal+"\n");
                 }
+                propuesta.setForAllSem(false);
                 propuestas.add(propuesta);
                 break;
 
@@ -83,6 +84,7 @@ public class Laboratorio extends Sala implements Reserva, Serializable {
                     propuesta.setReservador(reservador);
                 }
                 System.out.println("Todas sus fechas de laboratorio han sido registradas con exito!\n");
+                propuesta.setForAllSem(true);
                 propuestas.add(propuesta);
                 break;
 

@@ -80,21 +80,18 @@ public class AsignacionSalas {
         universidad.registrarResponsable("Hugo Castro", 1, "Hugo Castro", "1234");
         universidad.registrarResponsable("Cesar", 1, "Cesar Alvear", "1234");
         universidad.registrarResponsable("Ariel Rojas", 1, "Ariel Rojas", "1234");
-        universidad.registrarResponsable("Rodrigo Pavez", 3, "Rodrigo Pavez", "1234");
-        universidad.registrarResponsable("Ruth Garrido", 2, "Ruth Garrido", "1234");
-
+        universidad.registrarResponsable("Ruth Garrido", 3, "Ruth Garrido", "1234");
+        universidad.registrarResponsable("Luis Silvestre", 2, "Luis Silvestre", "1234");
         // Creacion del perfil de admin
-        Profesor admin = (Profesor) universidad.getResponsable(3, "Rodrigo Pavez");
-        admin.crearPerfilAdmin("utalca", "utalca123");
+        universidad.registrarResponsable("Rodrigo Pavez", 2, "utalca", "utalca123");
         // Fin creacion
         int rolM = 0;
         do{
             System.out.println("Selecciona que clase de persona eres dentro de la universidad para ver tu menú");
             System.out.println("[1] Estudiante");
-            System.out.println("[2] Administrativo");
+            System.out.println("[2] Administrador");
             System.out.println("[3] Profesor");
-            System.out.println("[4] Administrador");
-            System.out.println("[5] Cerrar sistema");
+            System.out.println("[4] Cerrar sistema");
             rolM = entrada.nextInt();
             switch (rolM){
                 case 1:
@@ -115,15 +112,15 @@ public class AsignacionSalas {
                     }
                     break;
                 case 2:
-                    System.out.println("Ingrese su nombre completo para iniciar sesión (Sensible a mayusculas y minisculas)");
+                    System.out.println("Ingrese su nombre de usuario(Sensible a mayusculas y minisculas)");
                     entrada.nextLine();
                     String nombreAd = entrada.nextLine();
-                    Administrativo administrativo = (Administrativo) universidad.getResponsable(2, nombreAd);
-                    if (administrativo != null){
+                    Administrador administrador = (Administrador) universidad.getResponsable(2, nombreAd);
+                    if (administrador != null){
                         System.out.println("Ingrese su password");
                         String pass = entrada.nextLine();
-                        if (pass.equals(administrativo.getPerfil().getPassword())){
-                            administrativo.menu(administrativo, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
+                        if (pass.equals(administrador.getPerfilAdmin().getPassword())){
+                            administrador.menuAdmin(administrador, universidad, universidad.getInicioSemestre(), universidad.getFinalSemestre());
                         }
                         else{
                             System.out.println("La contraseña es incorrecta!");
@@ -131,7 +128,8 @@ public class AsignacionSalas {
                     }
                     break;
                 case 3:
-                    System.out.println("Ingrese su nombre completo para iniciar sesión (Sensible a mayusculas y minisculas)");
+                    System.out.println("Ingrese su nombre completo para iniciar sesión, que por defecto es su nombre completo " +
+                            "(Sensible a mayusculas y minisculas)");
                     entrada.nextLine();
                     String nombrePro = entrada.nextLine();
                     Profesor profesor = (Profesor) universidad.getResponsable(3, nombrePro);
@@ -146,67 +144,8 @@ public class AsignacionSalas {
                         }
                     }
                     break;
-                case 4:
-                    System.out.println("¡Bienvenido Admin! ¿Que clase de persona eres?");
-                    System.out.println("[1] Estudiante");
-                    System.out.println("[2] Profesor");
-                    int roladmin = entrada.nextInt();
-                    System.out.println("Introduce tu nombre completo a continuacion (Sensible a mayusculas y minisculas)");
-                    entrada.nextLine();
-                    String nombreadmin = entrada.nextLine();
-                    if (roladmin == 1){
-                        Estudiante estudianteAdmin = (Estudiante) universidad.getResponsable(1, nombreadmin);
-                        if (estudianteAdmin != null){
-                            if (estudianteAdmin.isAdmin()){
-                                System.out.println("¡Usuario administrador encontrado!");
-                                System.out.println("Ingresa tu nombre de usuario");
-                                String user = entrada.nextLine();
-                                System.out.println("Ingresa tu password");
-                                String pass = entrada.nextLine();
-                                String userC = estudianteAdmin.getPerfil().getNombreUsuario();
-                                String passC = estudianteAdmin.getPerfil().getPassword();
-                                if (user.equals(userC) && pass.equals(passC)){
-                                    System.out.println("Has ingresado correctamente");
-                                    // Aqui va el menu de admin
-                                }
-                                else{
-                                    System.out.println("Tu nombre y/o password son incorrectos");
-                                }
-                            }
-                            else{
-                                System.out.println("Tu perfil no es Admin");
-                            }
-                        }
-                    }
-                    else if (roladmin == 2){
-                        Profesor profesorAdmin = (Profesor) universidad.getResponsable(3, nombreadmin);
-                        if (profesorAdmin != null){
-                            if (profesorAdmin.isAdmin()){
-                                System.out.println("¡Usuario administrador encontrado!");
-                                System.out.println("Ingresa tu nombre de usuario");
-                                String user = entrada.nextLine();
-                                System.out.println("Ingresa tu password");
-                                String pass = entrada.nextLine();
-                                String userC = profesorAdmin.getPerfil().getNombreUsuario();
-                                String passC = profesorAdmin.getPerfil().getPassword();
-                                if (user.equals(userC) && pass.equals(passC)){
-                                    System.out.println("Has ingresado correctamente");
-                                    // Aqui va el menu de admin
-                                }
-                                else{
-                                    System.out.println("Tu nombre y/o password son incorrectos");
-                                }
-                            }
-                            else{
-                                System.out.println("Tu perfil no es Admin");
-                            }
-                        }
-                    }
-                    else{
-                        System.out.println("Rol incorrecto");
-                    }
               }
-        }while(rolM != 5);
+        }while(rolM != 4);
 
         System.out.println("Cerrando sistema, ¡muchas gracias por usarlo!");
         //Responsables yo = universidad.getResponsable(1, "Hugo Castro");

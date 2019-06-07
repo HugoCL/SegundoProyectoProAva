@@ -6,15 +6,6 @@ import java.util.Scanner;
 
 public class Estudiante extends Responsables {
 
-    private Perfil perfilAdmin;
-
-    public void crearPerfilAdmin(String user, String pass) {
-        Perfil perfil = new Perfil();
-        perfil.setNombreUsuario(user);
-        perfil.setPassword(pass);
-        setAdmin(true);
-        setPerfilAdmin(perfil);
-    }
 
     public void menu(Estudiante estudiante, Universidad universidad, Date iSemestre, Date fSemestre) throws ParseException {
         int op = 0;
@@ -41,12 +32,5 @@ public class Estudiante extends Responsables {
                 System.out.println("Opcion no valida!");
             }
         }while(op != 3);
-    }
-    public Perfil getPerfilAdmin() {
-        return perfilAdmin;
-    }
-
-    public void setPerfilAdmin(Perfil perfilAdmin) {
-        this.perfilAdmin = perfilAdmin;
     }
 }
