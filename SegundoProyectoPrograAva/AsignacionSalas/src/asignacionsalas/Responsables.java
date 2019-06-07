@@ -43,7 +43,6 @@ public abstract class Responsables implements Serializable {
                         entrada.nextLine();
                         System.out.println("Ingrese el nombre completo de la Sala, por ejemplo 'Sala 23' ");
                         String salaEle = entrada.nextLine();
-                        System.out.println(salaEle);
                         for (SaladeClase sala: edificio.getSalas()) {
                             if (sala.getNombreSala().equals(salaEle)){
                                 System.out.println("Ingrese cantidad de alumnos: ");

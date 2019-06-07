@@ -137,6 +137,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
 
     }
 
+
     public void printPropuestas(){
         for (Propuesta propuesta: propuestas) {
             propuesta.getFechas();
