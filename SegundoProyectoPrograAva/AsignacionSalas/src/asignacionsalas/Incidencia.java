@@ -3,6 +3,10 @@ package asignacionsalas;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/***
+ * Clase encargada del manejo de las incidencias y sus datos
+ */
+
 public class Incidencia {
 
     private String detalleIncidencia;
@@ -67,15 +71,4 @@ public class Incidencia {
         setRolEncargado("DTI");
     }
 
-    public void asignarEncargadoAdmin(ArrayList<Administrador> administradors){
-        Scanner entrada  = new Scanner(System.in);
-        System.out.println("Ingrese el administrativo que se encargará del problema:");
-        for (int i = 0; i < administradors.size(); i++) {
-            System.out.println("["+i+"] "+ administradors.get(i).getNombreCompleto());
-        }
-        System.out.println("Ingrese el numero del administrativo que desea asignar");
-        int op = entrada.nextInt();
-        setEncargadoAdmin(administradors.get(op));
-        setRolEncargado("Administrador");
-    }
 }

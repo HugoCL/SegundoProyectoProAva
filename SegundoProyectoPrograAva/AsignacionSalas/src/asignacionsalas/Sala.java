@@ -1,10 +1,15 @@
 package asignacionsalas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public abstract class Sala {
+/***
+ * Clase abstraca modelo para salas de clases y laboratorios
+ */
+
+public abstract class Sala implements Serializable {
 
     private String nombreSala;
 
@@ -27,8 +32,6 @@ public abstract class Sala {
     private int telones;
 
     private int pizarras;
-
-    private Date fechaReservaConfirmada;
 
     private ArrayList<Incidencia> incidencias = new ArrayList<Incidencia>();
 
@@ -105,7 +108,7 @@ public abstract class Sala {
     }
 
     /***
-     *
+     * Metodo que crea un nuevo insumo tecnologico
      * @param tipo Es un int que indica que clase de insumo es. 1 para PC y 2 para Data
      */
     public void registrarInsumoT(int tipo, int id){
@@ -113,13 +116,19 @@ public abstract class Sala {
         insumo.setID(id);
         insumo.setEstado("Bueno");
         if (tipo == 1){
+            insumo.setInsumo(1);
             computadores.add(insumo);
         }
         else{
+            insumo.setInsumo(2);
             datas.add(insumo);
         }
     }
 
+    /***
+     * Metodo que colabora en el registro de incidencia
+     * @param universidad Universidad en la que se trabaja
+     */
     public void registrarIncidenciaS(Universidad universidad){
         Scanner entrada  = new Scanner(System.in);
         System.out.println("Se registrará una incidencia de en esta Sala: "+getNombreSala());
@@ -143,7 +152,8 @@ public abstract class Sala {
 
                 if (pcIncidencia == null) {
                     System.out.println("Este id no existe. Terminando registro de incidencia");
-                } else {
+                }
+                else {
                     System.out.println("Se registrará una incidencia sobre el computador n°:" + pcIncidencia.getID());
                     System.out.println("Ingrese el estado actual del computador: Bueno [1], regular[2] o malo[3]");
                     entrada.nextLine();
@@ -153,6 +163,7 @@ public abstract class Sala {
                     System.out.println("Ingrese los detalles de la incidencia:");
                     incidencia.setDetalleIncidencia(entrada.nextLine());
                     incidencia.setInsumoProblema(pcIncidencia);
+                    incidencias.add(incidencia);
                 }
                 break;
             case 2:
@@ -206,5 +217,9 @@ public abstract class Sala {
 
     public void setNombreSala(String nombreSala) {
         this.nombreSala = nombreSala;
+    }
+
+    public ArrayList<Incidencia> getIncidencias() {
+        return incidencias;
     }
 }

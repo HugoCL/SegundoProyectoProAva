@@ -3,6 +3,9 @@ package asignacionsalas;
 import java.util.ArrayList;
 import java.util.Date;
 
+/***
+ * Clase encarga del manejo y almacenamiento de las propuestas, ademas de las reservas confirmadas
+ */
 public class Propuesta {
 
     private ArrayList<Date> fechasPropuestasInicio = new ArrayList<Date>();
@@ -10,6 +13,7 @@ public class Propuesta {
     private Responsables reservador;
     private boolean isForAllSem;
     private String Actividad;
+    private boolean isConfirmada;
 
     public void addFecha(Date fechaInicio, Date fechaFinal) {
         fechasPropuestasInicio.add(fechaInicio);
@@ -59,7 +63,24 @@ public class Propuesta {
         return Actividad;
     }
 
+    public int confirmChecker(Date inicio, Date Final){
+        for (int j = 0; j < fechasPropuestasInicio.size(); j++) {
+            if (inicio.compareTo(fechasPropuestasInicio.get(j)) >= 0 || Final.compareTo(fechasPropuestasFinal.get(j)) <= 0 &&
+                    isConfirmada){
+                return -1;
+            }
+        }
+        return 0;
+    }
     public void setActividad(String actividad) {
         Actividad = actividad;
+    }
+
+    public boolean isConfirmada() {
+        return isConfirmada;
+    }
+
+    public void setConfirmada(boolean confirmada) {
+        isConfirmada = confirmada;
     }
 }

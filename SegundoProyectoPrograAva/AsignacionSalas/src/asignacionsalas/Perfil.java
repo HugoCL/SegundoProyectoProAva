@@ -1,6 +1,12 @@
 package asignacionsalas;
 
-public class Perfil {
+import java.io.Serializable;
+
+/***
+ * Clase que almacena el perfil de un usuario o admin
+ */
+
+public class Perfil implements Serializable {
 
     private String nombreUsuario;
 

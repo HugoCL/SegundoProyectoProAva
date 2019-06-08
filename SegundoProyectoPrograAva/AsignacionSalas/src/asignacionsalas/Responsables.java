@@ -2,9 +2,12 @@ package asignacionsalas;
 
 import java.io.*;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+
+/***
+ * Clase abstracta que da el modelo de estudiante, profesor y admin
+ */
 
 public abstract class Responsables implements Serializable {
 
@@ -14,6 +17,14 @@ public abstract class Responsables implements Serializable {
 
     private Perfil perfilUser;
 
+    /***
+     * Metodo que se encarga de realizar un reserva de una sala o un laboratorio
+     * @param reservador Es el objeto de la persona que realiza la reserva
+     * @param universidad Es la universidad en la que se trabaja
+     * @param iSemestre Inicio semestre
+     * @param fSemestre Fin semestre
+     * @throws ParseException Por si hay error de parseo
+     */
     public void realizarReserva(Responsables reservador, Universidad universidad, Date iSemestre, Date fSemestre)
             throws ParseException {
         Scanner entrada = new Scanner(System.in);
@@ -64,6 +75,17 @@ public abstract class Responsables implements Serializable {
                             System.out.println("No tienes el permiso para realizar esta acción");
                         }
                         else{
+                            System.out.println("Elegiste Lab. Selecciona una de las siguientes:");
+                            edificio.printLabs();
+                            System.out.println();
+                            entrada.nextLine();
+                            System.out.println("Ingrese el nombre completo del Lab");
+                            String labEle = entrada.nextLine();
+                            for (Laboratorio lab: edificio.getLaboratorios()) {
+                                if (lab.getNombreSala().equals(labEle)) {
+                                    lab.reservarPropuesta(reservador, iSemestre, fSemestre);
+                                }
+                            }
                         }
                         break;
                     default:
@@ -74,21 +96,83 @@ public abstract class Responsables implements Serializable {
 
 
     }
-    //ELIMINAR ESTE METODO ¡SOLO PRUEBAS!
-    public void getReservas(Universidad universidad){
-        ArrayList<Edificio> edificios = universidad.getEdificios();
-        Edificio edificio = edificios.get(0);
-        ArrayList<SaladeClase> salas = edificio.getSalas();
-        SaladeClase sala = salas.get(0);
-        sala.printPropuestas();
+
+    /***
+     * Metodo para realizar un informe de incidencia
+     * @param universidad Universidad actual en la que se trabaja
+     */
+    public void reportarIncidencia(Universidad universidad) {
+        System.out.println("Se inicio el proceso de reporte de incidencia");
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Edificios disponibles: ");
+        universidad.getAllEdificios();
+        System.out.println();
+        System.out.println("Ingrese edificio de la sala que tiene la incidencia");
+        String edificioEle = entrada.nextLine();
+        for (Edificio edificio : universidad.getEdificios()) {
+            if (edificio.getColor().equals(edificioEle)) {
+                System.out.println("\nEdificio encontrado!");
+                System.out.println("En este edificio hay " + edificio.getCantSalas() + " salas y " + edificio.getCantLabs() + " laboratorios");
+                System.out.print("Salas disponibles: ");
+                edificio.printSalas();
+                System.out.println();
+                System.out.println("Laboratorios disponibles: ");
+                edificio.printLabs();
+                System.out.println();
+                System.out.println("Desea reportar un problema en una sala[1] o laboratorio[2]?");
+                int op = entrada.nextInt();
+                if (op == 1){
+                    System.out.println("Elegiste Sala. Selecciona una de las siguientes:");
+                    edificio.printSalas();
+                    System.out.println();
+                    entrada.nextLine();
+                    System.out.println("Ingrese el nombre completo de la Sala, por ejemplo 'Sala 23' ");
+                    String salaEle = entrada.nextLine();
+                    int exito = 0;
+                    for (SaladeClase sala: edificio.getSalas()) {
+                        if (sala.getNombreSala().equals(salaEle)) {
+                            sala.registrarIncidenciaS(universidad);
+                            exito = 1;
+                        }
+                    }
+                    if (exito == 0){
+                        System.out.println("No se encontro esa sala :/");
+                    }
+                }
+                else if (op == 2){
+                        System.out.println("Elegiste Lab. Selecciona una de las siguientes:");
+                        edificio.printLabs();
+                        System.out.println();
+                        entrada.nextLine();
+                        System.out.println("Ingrese el nombre completo del Lab");
+                        String labEle = entrada.nextLine();
+                        int exito = 0;
+                        for (Laboratorio lab: edificio.getLaboratorios()) {
+                            if (lab.getNombreSala().equals(labEle)) {
+                                lab.registrarIncidenciaS(universidad);
+                                exito = 1;
+                            }
+                        }
+                        if (exito == 0){
+                            System.out.println("No se encontro esa sala :/");
+                        }
+                }
+                else{
+                    System.out.println("Tipo de sala incorrecto");
+                }
+            }
+        }
     }
 
-    public void reportarIncidencia() {
-    }
     public String getNombreCompleto() {
         return nombreCompleto;
     }
 
+    /***
+     * Metodo que crea el perfil para X usuario
+     * @param user Nombre de usuario
+     * @param pass Contrasenya
+     */
     public void configPerfil(String user, String pass) {
         Perfil perfil = new Perfil();
         perfil.setAdmin(false);
@@ -100,12 +184,6 @@ public abstract class Responsables implements Serializable {
     public Perfil getPerfil(){
         return perfilUser;
     }
-
-    /*
-    public void verResponsable(){
-        Estudiante estudiante = estudiantes.get(1);
-        System.out.println(estudiante.getNombreCompleto());
-    }*/
 
 
     public void setNombreCompleto(String nombreCompleto) {

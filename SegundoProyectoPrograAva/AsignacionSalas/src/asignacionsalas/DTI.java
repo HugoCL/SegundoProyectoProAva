@@ -1,5 +1,8 @@
 package asignacionsalas;
 
+/***
+ * Clase que maneja a los empleados de DTI
+ */
 public class DTI {
 
     private String nombreCompleto;

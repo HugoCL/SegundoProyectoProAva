@@ -1,12 +1,24 @@
 package asignacionsalas;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Estudiante extends Responsables {
+/***
+ * Clase que contiene los datos y funciones de un estudiante
+ */
 
+public class Estudiante extends Responsables implements Serializable {
 
+    /***
+     * Metodo que muestra el menu para el estudiante
+     * @param estudiante El objeto que corresponde al estudiante actual
+     * @param universidad la universidad en la que estudia
+     * @param iSemestre inicio de semestre
+     * @param fSemestre fin de semestre
+     * @throws ParseException por si hay error de parseo
+     */
     public void menu(Estudiante estudiante, Universidad universidad, Date iSemestre, Date fSemestre) throws ParseException {
         int op = 0;
         System.out.println("¡Hola "+getNombreCompleto()+"!");
@@ -17,9 +29,7 @@ public class Estudiante extends Responsables {
             System.out.println("[3] Cerrar sesion");
             op = entrada.nextInt();
             if (op == 1){
-                reportarIncidencia();
-                System.out.println("Desea realizar otra operacion? 1 para si, 0 para no");
-
+                reportarIncidencia(universidad);
             }
             else if (op == 2){
                 System.out.println("Recuerda que solo puedes reservar salas");

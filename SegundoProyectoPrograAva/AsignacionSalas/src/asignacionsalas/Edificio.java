@@ -1,8 +1,12 @@
 package asignacionsalas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Edificio {
+/***
+ * Clase que guarda la informacion general del edificio y salas en su interior
+ */
+public class Edificio implements Serializable {
 
     private String color;
 
@@ -26,6 +30,18 @@ public class Edificio {
         this.color = color;
     }
 
+    /***
+     * Metodo para agregar salas o
+     * @param nombre Lo mismo que indica el nombre
+     * @param actividad Lo mismo que indica el nombre
+     * @param capacidad Lo mismo que indica el nombre
+     * @param computadores Lo mismo que indica el nombre
+     * @param datas Lo mismo que indica el nombre
+     * @param mesas Lo mismo que indica el nombre
+     * @param pizarras Lo mismo que indica el nombre
+     * @param telones Lo mismo que indica el nombre
+     * @param sillas Lo mismo que indica el nombre
+     */
     public void agregarSalaClases(String nombre, String actividad, int capacidad, int computadores, int datas, int mesas,
                                   int pizarras, int telones, int sillas){
         SaladeClase nuevaSala = new SaladeClase();
@@ -34,12 +50,19 @@ public class Edificio {
         salas.add(nuevaSala);
         setCantSalas(getCantSalas()+1);
     }
-    /*
-    public void verDatos(){
-        SaladeClase sala = salas.get(0);
-        System.out.println(sala.getProfResponsable());
-    }*/
 
+    /***
+     * Metodo para agregar salas o
+     * @param nombre Lo mismo que indica el nombre
+     * @param actividad Lo mismo que indica el nombre
+     * @param capacidad Lo mismo que indica el nombre
+     * @param computadores Lo mismo que indica el nombre
+     * @param datas Lo mismo que indica el nombre
+     * @param mesas Lo mismo que indica el nombre
+     * @param pizarras Lo mismo que indica el nombre
+     * @param telones Lo mismo que indica el nombre
+     * @param sillas Lo mismo que indica el nombre
+     */
     public void agregarLaboratorio(String nombre, String actividad, int capacidad, int computadores, int datas, int mesas,
                                    int pizarras, int telones, int sillas){
 
@@ -59,6 +82,9 @@ public class Edificio {
         return laboratorios;
     }
 
+    /***
+     * Metodo que muestra las salas y sus capacidades
+     */
     public void printSalas(){
         if (salas.size() == 0){
             System.out.println("No hay salas disponibles en este edificio");
@@ -70,6 +96,9 @@ public class Edificio {
         }
     }
 
+    /***
+     * Metodo que muestra los laboratorios y sus salas
+     */
     public void printLabs(){
         if (laboratorios.size() == 0){
             System.out.println("No hay labs disponibles en este edificio");

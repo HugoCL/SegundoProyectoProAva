@@ -1,11 +1,16 @@
 package asignacionsalas;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Profesor extends Responsables {
+/***
+ * Clase que contiene la info y los metodos para un profesor
+ */
+
+public class Profesor extends Responsables implements Serializable {
 
 
     public void menu(Profesor profesor, Universidad universidad, Date iSemestre, Date fSemestre) throws ParseException {
@@ -18,9 +23,7 @@ public class Profesor extends Responsables {
             System.out.println("[2] Cerrar sesion");
             op = entrada.nextInt();
             if (op == 1){
-                reportarIncidencia();
-                System.out.println("Desea realizar otra operacion? 1 para si, 0 para no");
-
+                reportarIncidencia(universidad);
             }
             else if (op == 2){
                 realizarReserva(profesor, universidad, iSemestre, fSemestre);

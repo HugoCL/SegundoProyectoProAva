@@ -1,12 +1,12 @@
 package asignacionsalas;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Date;
 
+/***
+ * Clase mas importante del programa. Concentra toda la informacion y las clases del sistema
+ */
 public class Universidad implements Serializable {
 
     private String nombre;
@@ -29,7 +29,7 @@ public class Universidad implements Serializable {
 
 
     /***
-     *
+     * Metodo que se encarga de las creaciones de salas
      * @param color Es el string con el color del edificio en el que ira la sala
      * @param SalaoLab Es un int que indica si la sala que se creara es una sala de clases(0) o laboratorio(1)
      */
@@ -52,6 +52,11 @@ public class Universidad implements Serializable {
 
     }
 
+    /***
+     * Metooo que se uso para crear los edificios. Deprecated porque esta todo serializado
+     * @deprecated
+     * @param color
+     */
     public void crearEdificio(String color){
         if (getCantEdificios() == 0){
             edificios.add(new Edificio(color));
@@ -99,26 +104,72 @@ public class Universidad implements Serializable {
             profesores.add(profesor);
         }
     }
-    //SIN TERMINAR
+
+    /***
+     * Metodo que serializa todos los datos del programa
+     */
     public void Serializar(){
-        String nombreArchivo = "SerializaciónResponsable";
         try {
-            FileOutputStream archivo = new FileOutputStream(nombreArchivo);
+            FileOutputStream archivo = new FileOutputStream("SerializacionEdificios");
             ObjectOutputStream salida = new ObjectOutputStream(archivo);
-
-            salida.writeObject(estudiantes.get(0));
-        }
-
-        catch (IOException ex){
-            System.out.println("Excepcion detectada");
+            salida.writeObject(edificios);
+            archivo = new FileOutputStream("SerializacionEstudiantes");
+            salida = new ObjectOutputStream(archivo);
+            salida.writeObject(estudiantes);
+            archivo = new FileOutputStream("SerializacionProfesores");
+            salida = new ObjectOutputStream(archivo);
+            salida.writeObject(profesores);
+            archivo = new FileOutputStream("SerializacionAdministradores");
+            salida = new ObjectOutputStream(archivo);
+            salida.writeObject(administradores);
+            salida.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    /*public void verDatos(){
-        Edificio edificio = edificios.get(1);
-        edificio.verDatos();
-    }*/
+    /***
+     * Metodo que des-serializa lo que se encuentra en los archivos
+     * @throws FileNotFoundException
+     */
+    public void DesSerializar() throws FileNotFoundException {
+        try {
+            FileInputStream archivo = new FileInputStream("SerializacionEdificios");
+            ObjectInputStream entrada = new ObjectInputStream(archivo);
+            ArrayList<Edificio> edificiosDes = (ArrayList<Edificio>) entrada.readObject();
+            archivo = new FileInputStream("SerializacionEstudiantes");
+            entrada = new ObjectInputStream(archivo);
+            ArrayList<Estudiante> estudiantesDes = (ArrayList<Estudiante>) entrada.readObject();
+            archivo = new FileInputStream("SerializacionProfesores");
+            entrada = new ObjectInputStream(archivo);
+            ArrayList<Profesor> profesoresDes = (ArrayList<Profesor>) entrada.readObject();
+            archivo = new FileInputStream("SerializacionAdministradores");
+            entrada = new ObjectInputStream(archivo);
+            ArrayList<Administrador> administradoresDes = (ArrayList<Administrador>) entrada.readObject();
+            edificios = edificiosDes;
+            estudiantes = estudiantesDes;
+            profesores = profesoresDes;
+            administradores = administradoresDes;
+            entrada.close();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
 
+
+    }
+
+    /***
+     * Metodo de busqueda de alguna persona, profesor, estudiante o admin
+     * @param rol Es int que indica rol. 1 para estudiante, 2 para admin, 3 para profesor
+     * @param nombreCompleto Como el nombre indica
+     * @return retorna el objeto correspondiente a la persona
+     */
     public Responsables getResponsable(int rol, String nombreCompleto){
         if (rol == 1){
             for (Estudiante estudiante : estudiantes) {
@@ -151,6 +202,9 @@ public class Universidad implements Serializable {
         return  null;
     }
 
+    /***
+     * Metodo que printea todos los edificios disponibles
+     */
     public void getAllEdificios(){
         System.out.println(getCantEdificios());
         for (Edificio edificio : edificios) {
