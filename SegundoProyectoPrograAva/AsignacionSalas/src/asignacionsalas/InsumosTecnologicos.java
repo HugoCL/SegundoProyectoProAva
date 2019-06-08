@@ -10,6 +10,7 @@ public class InsumosTecnologicos implements Serializable {
     private String estado;
     private int ID;
     private int Insumo;
+    private static final long serialVersionUID = 1L;
 
     public String getEstado() {
         return estado;

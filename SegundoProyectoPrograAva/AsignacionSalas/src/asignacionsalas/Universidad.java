@@ -9,6 +9,8 @@ import java.util.Date;
  */
 public class Universidad implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private String nombre;
 
     private Date inicioSemestre;

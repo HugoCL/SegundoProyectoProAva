@@ -11,6 +11,8 @@ import java.util.Scanner;
 
 public abstract class Sala implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private String nombreSala;
 
     private int capacidad;

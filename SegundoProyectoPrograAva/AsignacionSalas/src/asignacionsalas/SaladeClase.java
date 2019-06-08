@@ -13,6 +13,7 @@ public class SaladeClase extends Sala implements Reserva, Serializable{
 
     private ArrayList<Propuesta> propuestas = new ArrayList<Propuesta>();
 
+    private static final long serialVersionUID = 1L;
 
     @Override
     public void reservarPropuesta(Responsables reservador, Date inicioSemestre, Date finalSemestre) throws ParseException {

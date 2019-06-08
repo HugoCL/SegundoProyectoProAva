@@ -8,6 +8,8 @@ import java.util.ArrayList;
  */
 public class Edificio implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private String color;
 
     private int cantSalas = 0;
